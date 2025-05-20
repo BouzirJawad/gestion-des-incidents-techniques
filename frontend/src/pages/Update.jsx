@@ -62,7 +62,7 @@ function Update() {
         className="bg-white rounded-xl shadow-lg text-center max-w-3xl w-full border-3 border-blue-600"
       >
         <div className="flex items-center justify-center bg-blue-600 rounded-t-lg p-3">
-          <p className="text-3xl flex text-white">Edit Info</p>
+          <p className="text-3xl flex text-white">Edit wiame Info</p>
           
         </div>
         <div className="p-6 flex flex-col gap-5 space-y-1">
