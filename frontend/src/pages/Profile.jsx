@@ -14,7 +14,7 @@ function Profile() {
     <div className="h-screen flex items-center justify-center bg-gradient-to-br from-[#001F3F] to-[#3b9aff]">
       <div className="bg-white rounded-xl shadow-lg text-center max-w-xl w-full border-3 border-blue-600">
         <div className="flex items-center bg-blue-600 rounded-t-lg p-3 justify-between">
-          <p className="text-3xl flex text-white">Profile</p>
+          <p className="text-3xl flex text-white">wiame profile</p>
           <button
             className="flex gap-5 text-2xl px-6 bg-white items-center"
             onClick={() => logout()}
