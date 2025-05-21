@@ -2,7 +2,7 @@ import React from 'react'
 
 function Test() {
   return (
-    <div>jawad did this test</div>
+    <div>wiame did this test</div>
   )
 }
 
