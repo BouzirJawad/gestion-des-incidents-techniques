@@ -4,10 +4,10 @@ const { createTicket, getAllTickets, getTicketById, updateTicket, deleteTicket  
 
 const router = express.Router();
 
-router.post('/cree', createTicket);
-router.get('/getall', getAllTickets);
-router.get('/get' , getTicketById );
-router.put('/update' , updateTicket)
-router.delete('/delete' , deleteTicket)
+router.post('/', createTicket);
+router.get('/', getAllTickets);
+router.get('/' , getTicketById );
+router.put('/' , updateTicket)
+router.delete('/' , deleteTicket)
 
 module.exports = router;
