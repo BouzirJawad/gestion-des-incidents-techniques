@@ -1,5 +1,5 @@
 const Ticket = require('../models/Ticket');
-const User = require('User');
+const User = require('../models/User');
 
 
 // cree un ticket 
@@ -47,4 +47,29 @@ try {
   res.status(500).json({msg : "error lors la requperation des tickets "})
 }
 
+}
+
+
+//oubtonire un ticket par ID 
+
+exports.getById = async(req , res)=>{
+  try{
+    const ticket =  await Ticket. findById(req.params.id)
+    .populate("user" , "username")
+    .populate("assignedTo" , "username email")
+
+
+    if(!ticket) {
+      return res.status(404).json({ message: "Ticket non trouvé" });
+    } 
+
+    
+    if (req.user.role !== "admin" && ticket.user._id.toString() !== req.user.id) {
+      return res.status(403).json({ message: "Accès non autorisé" });
+    }
+    res.status(200).json(ticket);
+
+  }catch(error){
+    res.status(500).json({ message: "Erreur serveur" });
+  }
 }
