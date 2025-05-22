@@ -26,3 +26,25 @@ exports.createTicket = async(req , res)=>{
 
     }
 }
+
+
+
+// oubtonie toutes les tickite 
+
+exports.getAllTickets = async(req , res)=>{
+
+try {
+  const filter = req.user.role === "admin" ? {} : {user : req.user.id}
+
+  const tickets = await Ticket.find(filter)
+  .populate("user" , "username email")
+  .populate("assignedTo" , "username email")
+  .sort({createdAt : -1})
+
+
+  res.status(200).json(tickets);
+}catch (error){
+  res.status(500).json({msg : "error lors la requperation des tickets "})
+}
+
+}
