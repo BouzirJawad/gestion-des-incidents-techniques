@@ -85,3 +85,19 @@ exports.updateTicket = async (req, res) => {
     res.status(500).json({ message: "Erreur lors de la mise à jour", error: err.message });
   }
 };
+
+exports.deleteTicket = async (req, res) => {
+  try {
+    const ticket = await Ticket.findById(req.params.id);
+    if (!ticket) return res.status(404).json({ message: "Ticket introuvable" });
+
+    if (req.user.role !== "admin" && ticket.user.toString() !== req.user.id) {
+      return res.status(403).json({ message: "Suppression non autorisée" });
+    }
+
+    await ticket.deleteOne();
+    res.status(200).json({ message: "Ticket supprimé avec succès" });
+  } catch (err) {
+    res.status(500).json({ message: "Erreur serveur" });
+  }
+};
