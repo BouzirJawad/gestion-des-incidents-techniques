@@ -1,14 +1,13 @@
-import { Stack } from "expo-router";
+import { Stack, Slot } from "expo-router";
 import  AuthProvider  from './context/AuthProvider';
-import { NavigationContainer } from '@react-navigation/native';
+import  Toast  from "react-native-toast-message";
 import "./global.css"
 
 export default function RootLayout() {
   return (
     <AuthProvider>
-      
-        <Stack screenOptions={{ headerShown: false }} />
-      
+        <Slot />
+        <Toast />
     </AuthProvider>
   )
 }

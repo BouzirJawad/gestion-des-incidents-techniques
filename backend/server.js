@@ -16,6 +16,6 @@ connectDB()
 app.use("/api", authRoutes)
 app.use("/api", ticketRoutes)
 
-app.listen(PORT, ()=> {
-    console.log(`Server is running on port ${PORT}`)
-})
+app.listen(PORT, () => {
+  console.log('Server running on port 7460');
+});
