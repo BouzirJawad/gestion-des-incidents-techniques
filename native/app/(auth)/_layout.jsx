@@ -1,5 +1,5 @@
 // app/(auth)/_layout.jsx
-import { Stack, useRouter } from 'expo-router';
+import { Slot, Stack, useRouter } from 'expo-router';
 import { useEffect } from 'react';
 import { useAuth } from '../context/AuthProvider';
 
@@ -17,5 +17,5 @@ export default function ProtectedLayout() {
       router.replace('/(screens)/login');
   }
 
-  return <Stack />;
+  return <Slot />;
 }

@@ -25,7 +25,7 @@ export default function RegisterScreen() {
 
   const handleRegister = async (values) => {
     try {
-      const res = await axios.post("http://192.168.200.158:7460/api/auth/register", values);
+      const res = await axios.post("http://192.168.60.162:7460/api/auth/register", values);
 
       if (res.status === 201) {
         Toast.show({
