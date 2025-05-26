@@ -3,7 +3,9 @@ import  AuthProvider  from './context/AuthProvider';
 import  Toast  from "react-native-toast-message";
 import "./global.css"
 
+
 export default function RootLayout() {
+
   return (
     <AuthProvider>
         <Slot />

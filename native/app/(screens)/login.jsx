@@ -18,7 +18,7 @@ export default function login() {
 
   const handleLogin = async (values) => {
     try {
-      const res = await axios.post('http://192.168.200.158:7460/api/auth/login', values);
+      const res = await axios.post('http://192.168.60.162:7460/api/auth/login', values);
 
       const newToken = res.data.token;
       if (newToken) {
@@ -28,8 +28,8 @@ export default function login() {
           text2: 'You are logged in 🎉',
           visibilityTime: 2000,
         })
-        login(res.data.token);
-        router.replace('/(auth)/profile');
+        login(newToken);
+        router.replace('/(auth)/dashBoard');
       }
     } catch (err) {
       Alert.alert('Échec de la connexion', err?.response?.data?.message || err.message);

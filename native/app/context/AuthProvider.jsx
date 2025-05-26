@@ -27,7 +27,7 @@ const AuthProvider = ({ children }) => {
 
   const getUser = async () => {
     try {
-      const res = await axios.get('http://YOUR-IP:7460/api/profile/me');
+      const res = await axios.get('http://192.168.60.162:7460/api/profile/me');
       const newUser = res.data;
       setUser(newUser);
       await AsyncStorage.setItem('user', JSON.stringify(newUser));
