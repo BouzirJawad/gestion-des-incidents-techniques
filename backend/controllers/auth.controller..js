@@ -5,7 +5,7 @@ const { generateToken } = require("../config/jwt")
 const register = async (req, res) => {
     try {
         const { username, email, number, password, isAdmin } = req.body
-        const user = await User.findOne({email})
+        const user = await User.findOne({ email })
 
         if(user){
             res.status(404).json({message: "User already exists!"})
@@ -19,7 +19,7 @@ const register = async (req, res) => {
         res.status(201).json({message: "User registered successfully!"})
 
     } catch (error) {
-        console.error(error.message)
+        console.error(error)
         res.status(500).json({message: "Server error, Enable to register!"})
     }
 }
